@@ -1,0 +1,73 @@
+<!-- Home/Welcome page for the Student Survey application -->
+<template>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <!-- Welcome Header -->
+        <div class="text-center mb-5">
+          <h1 class="display-4 fw-bold text-success">{{ title }}</h1>
+          <p class="lead text-muted">{{ subtitle }}</p>
+        </div>
+
+        <!-- Navigation Cards -->
+        <div class="row g-4">
+          <!-- Student Survey Card -->
+          <div class="col-md-6">
+            <div class="card h-100 text-center card-hover">
+              <div class="card-body d-flex flex-column justify-content-center p-5">
+                <h3 class="card-title mb-3">Student Survey</h3>
+                <p class="card-text mb-4">
+                  Share your feedback about your campus visit experience
+                </p>
+                <router-link to="/survey" class="btn btn-primary btn-lg">
+                  Take Survey
+                </router-link>
+              </div>
+            </div>
+          </div>
+
+          <!-- List All Surveys Card -->
+          <div class="col-md-6">
+            <div class="card h-100 text-center card-hover">
+              <div class="card-body d-flex flex-column justify-content-center p-5">
+                <h3 class="card-title mb-3">All Surveys</h3>
+                <p class="card-text mb-4">
+                  View, update, or delete existing survey responses
+                </p>
+                <router-link to="/surveys" class="btn btn-secondary btn-lg">
+                  View Surveys
+                </router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Home',
+  data() {
+    return {
+      title: 'Welcome to GMU Student Survey',
+      subtitle: 'Share your campus visit experience with us'
+    }
+  }
+}
+</script>
+
+<style scoped>
+.text-success {
+  color: var(--gmu-green) !important;
+}
+
+.card-hover {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+}
+</style>
